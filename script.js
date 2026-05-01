@@ -12,7 +12,18 @@ const result = document.getElementById("b");
 
 button.addEventListener("click", function(){
     const randomNumber = Math.floor(Math.random()*fortunes.length);
-    if (result="超大吉だ！！ほんまえぐいっすわ！"){result.style.color ="yellow"};
+    const resultText = fortunes[(randomNumber)]
+  
     result.textContent = fortunes[(randomNumber)];  
+  
+    if (resultText.includes("超大吉")){
+        result.style.color ="yellow";
+       }
+    else if(resultText.includes("小凶")){
+        result.style.color ="black"
+    }
+       else {result.style.color ="green";
+    }
+
 });
 
